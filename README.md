@@ -11,7 +11,7 @@ STOR 390 delves into the intersection of machine learning, ethics, and society, 
 
 ## Course Topics
 - **Statistical**: Classification, Sensitivity Analysis, Federated Learning, Causal Inference
-- **Coding**: Open-Source tools and R-Markdown
+- **Coding**: R-Markdown
 - **Philosophical**: Deontology, Consequentialism, Virtue Ethics, Harm Principle, Informed Consent
 
 ## Prerequisites
