@@ -57,4 +57,4 @@ Discuss your results.  If you have done this correctly, you should have a classi
 
 Build a github repository to store your homework assignments.  Share the link in this file.  
 
-*STUDENT INPUT*
+https://github.com/rmharp/STOR-390
