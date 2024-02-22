@@ -52,7 +52,7 @@ plot(svmmod1, trainData)
 
 It would appear that we are better capturing the training data, but comment on the dangers (if any exist), of such a model. 
 
-SVM does a great job of capturing the extremely complex decision boundary present in the features, however, the dangers of utilizing an extremely high cost come from overfitting on the training data. Overfitting is a common problem in data science and results from creating a model which is overly complex to the point of being Lagrangian and fitting all of the training data. These models tend to possess a characteristic of poorly performing on unseen test data.
+SVM does a great job of capturing the extremely complex decision boundary present in the features, however, the dangers of utilizing an extremely high cost come from overfitting on the training data, as characterized by a model's excessive complexity. This excessive complexity arises not from the model fitting to the underlying pattern in the training data, but from it also fitting the noise within that data. These models tend to possess a characteristic of poorly performing on unseen test data.
 
 ##
 
