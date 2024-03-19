@@ -145,12 +145,14 @@ Now let's see if our model is *fair* across this explanatory variable.  Calculat
 # Male
 AccM <- male_confusion$overall['Accuracy']
 ProportionPosMales <- sum(male_confusion$table[,"Yes"]) / sum(male_confusion$table)
+TotMale <- sum(male_confusion$table)
 FPR_Males <- male_confusion$table["Yes","No"] / sum(male_confusion$table["No",])
 TPR_Males <- male_confusion$table["Yes","Yes"] / sum(male_confusion$table[,"Yes"])
 
 # Female
 AccF <- female_confusion$overall['Accuracy']
 ProportionPosFemales <- sum(female_confusion$table[,"Yes"]) / sum(female_confusion$table)
+TotFemale <-  sum(female_confusion$table)
 FPR_Females <- female_confusion$table["Yes","No"] / sum(female_confusion$table["No",])
 TPR_Females <- female_confusion$table["Yes","Yes"] / sum(female_confusion$table[,"Yes"])
 
@@ -160,19 +162,19 @@ OARR <- AccF / AccM
 
 # Disparate Impact (DI)
 ### Measures the ratio of positive outcomes received by the unprivileged group to the privileged group. Values close to 1 indicate fairness.
-DI <- ProportionPosFemales / ProportionPosMales
+DI <- ProportionPosMales / ProportionPosFemales
 
 # Statistical Parity (SP)
 ### The difference in the rate of positive outcomes between two groups such that a value of 0 indicates fairness.
-SP <- ProportionPosFemales - ProportionPosMales
+SP <-abs(ProportionPosMales - ProportionPosFemales)
 
 # Predictive Equality (PE) 
 ### The difference in False Positive Rates (FPR) between groups such that a value of 0 indicates fairness.
-PE <- FPR_Females - FPR_Males
+PE <-  abs(FPR_Males - FPR_Females)
 
 # Equal Opportunity (EO)
 ### The difference in True Positive Rates (TPR) between groups such that a value of 0 indicates fairness.
-EO <- TPR_Females - TPR_Males
+EO <- abs(TPR_Males - TPR_Females)
 
 print(paste("OARR:", OARR))
 print(paste("Disparate Impact:", DI))
@@ -183,7 +185,7 @@ print(paste("Equal Opportunity:", EO))
 
 The Overall Accuracy Rate Ratio is close to 1, indicating that the accuracy of the model is almost equally good for both males and females. An OARR of 1 would indicate perfect fairness in terms of accuracy between the two groups. Our model meets this criterion reasonably well, suggesting that it is fair in terms of overall accuracy across genders.
 
-Disparate Impact compares the proportion of positive outcomes between unprivileged (male) and privileged (female) groups, being that females were given priority access to lifeboats during the Titanic disaster. A value of 1 indicates no disparate impact, and values between 0.8 and 1.25 are typically considered fair. A DI of 3.074 suggests that females are significantly more likely to be predicted as survivors compared to males, indicating a substantial disparate impact against males in your model. This criterion for fairness is not met.
+Disparate Impact (DI) measures the ratio of positive outcomes received by the unprivileged group to the privileged group, with values close to 1 indicating fairness. A DI value of 0.325 is far from 1, suggesting a significant disparity in the rate of positive outcomes, with males being much less likely to receive positive outcomes compared to females. This indicates a strong bias against males in the model's predictions.
 
 Statistical Parity (SP) measures the difference in the rate of positive outcomes between two groups. A value of 0 would indicate perfect fairness, meaning both groups have the same rate of positive outcomes. A SP of 0.514 indicates a significant difference in the rate of positive outcomes in favor of females, suggesting the model significantly favors females in predicting survival on the Titanic. This criterion for fairness is not met.
 
@@ -201,3 +203,5 @@ It is always important for us to interpret our results in light of the original 
 Even so, provide a *philosophical* notion of justice or fairness that may have motivated the Titanic survivors to act as they did. Spell out what this philosophical notion or principle entails?
 
 The actions of the Titanic survivors in prioritizing women and children for lifeboat spots can be philosophically grounded in the notion of care ethics. Normative ethical theories propose standards for what actions are morally right or wrong, as opposed to descriptive ethics, which simply describes how people behave or what moral beliefs they hold. The framework of care ethics emphasizes the moral importance of responding to the needs of individuals who are in a position of vulnerability or dependence. Care ethics is a normative ethical theory that highlights the significance of interpersonal relationships and the virtues of empathy, compassion, and caring. It suggests that moral actions stem from the understanding of and response to the needs of others, especially those who are dependent or vulnerable. In the context of the Titanic disaster, this principle can be seen in the collective decision to prioritize those perceived as most vulnerable (women and children) for evacuation. While this ethical principle provides a moral grounding for the actions taken during the Titanic disaster, it also highlights the complexity of making any sort of ethical decision in life-and-death situations. These decisions to protect women alongside children reflects the values and norms of the time-March 31, 1909-when many of the gender reforms were not yet in place. Although it still may be the case that women and children are prioritized if a similar situation were to occur today, I believe it is more likely than it was that the distribution of adult men and women saved is closer to equal than it was in 1909.
+
+As discussed more recently in class, the veil of ignorance-posited by John Rawl in A Theory of Justice-suggests that we should imagine ourselves behind a "veil of ignorance" when making decisions related to social justice or resource allocation without knowledge of one's position within society.While behind the veil, we know nothing of our ethnicity, social status, gender, or idea of how to lead a good life and instead will tend to help those who are most disadvantaged in case this becomes our place in society outside of the veil. Help comes in many forms, of course, such as resources, rights, and freedom which Rawls calls "Primary Goods." Related to the Titanic, someone looking behind a veil of ignorance may seek to help woman more than men on-board, since although men ultimately had lower odds of survival, in the social paradigms of 1909 women were typically withheld many rights leaving them as the unprivileged class in the general sense, although statistically they were the privileged group in the scenaro of Titanic survival.
