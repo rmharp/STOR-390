@@ -25,7 +25,7 @@ header-includes:
 \renewcommand\abstractname{}
 \renewcommand{\refname}{References in the Discussion}
 \begin{abstract}
-\textbf{Abstract:} This homework explores optimization methods in machine learning, specifically Gradient Descent (GD) and Stochastic Gradient Descent (SGD), and their fundamental differences, particularly in the context of the update step. Additionally, it delves into the FedAve algorithm, presenting a proof of equivalence between two of its formulations and offering an intuitive explanation of its federated learning approach. Lastly, it examines the harm principle's relevance to machine learning, questioning the agency of ML models and their potential to limit user autonomy through the unintended consequences of their application.
+\textbf{Abstract:} This homework explores the application of differential privacy via a biased randomized response mechanism, providing a generalized estimation formula for the proportion of sensitive observations. It also details the implementation of a K-Nearest Neighbors (KNN) classifier, demonstrating the creation and application of a Chebyshev distance function within the Iris dataset. Additionally, I explored the ethical challenges presented by the use of AI in healthcare, particularly focusing on the management of sensitive data in scenarios such as corporate acquisitions and access by insurance companies, highlighting the balance between technological benefits and privacy concerns and emphasizing the importance of ethical considerations in the deployment of AI technologies.
 \end{abstract}
 \vspace{1em}
 \begin{multicols}{2}
