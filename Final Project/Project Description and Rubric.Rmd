@@ -1,0 +1,80 @@
+---
+title: '**Project Description and Rubric**'
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: 2
+    latex_engine: xelatex
+geometry: margin=2cm
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+# **Purpose**
+
+The purpose of the project is to give you experience critiquing current work in the literature.  Potentially unique to this class, this critique should be both statistical and philosophical.  A successful project will have thoroughly convinced me of the merits (or demerits) of the statistical methodology and moral justification of said methodology.  
+
+# **Requirements**
+
+In working towards the midterm, you should schedule a one-on-one meeting with me to propose a specific paper.  Even though you will ultimately choose to analyze a single paper, I would like you to bring three possible papers to this one-on-one.  This meeting is entirely dedicated to ensuring that whatever paper is ultimately chosen presents a worthwhile method and elicits a salient moral consideration.  You should leave this paper knowing what single paper you will propose in the midterm and subsequently analyze in the final.  
+
+Within the midterm paper itself, you should provide a concise summary of the paper's proposed method.  This portion of the project is intended to assess your ability to digest potentially dense statistical texts and subsequently communicate it in comprehensible language.  Finally, the midterm should explicitly mention the normative concern (even if it is not explicitly mentioned in the paper itself) and convince me that it is a pressing one.  Note, your job here is not (yet) to adjudicate the normative concern, only to persuade me that it matters.  
+
+The final paper consists of four sections: Introduction, Analysis of Methods, Analysis of Normative Consideration, and Conclusion. The analysis sections are where you are ultimately to convince me of the merits or demerits of the paper.  Furthermore, the analysis of methods should include some novel analysis of your own.  This could be a simulation study aimed to verify a result, recreating a proof of a theoretical result, or applying the proposed method to a novel data set. **Note: this analysis requirement should guide your choice of paper.  If you think it unlikely that you will be able to apply or recreate the analysis included in the paper, it is likely not the proper paper to choose!** Likewise, the analysis of normative considerations should not merely be a statement of your intuition.  It should appeal to one of the principles discussed in class and detail how said principle is applicable here.  Note, it is entirely possible that your position is favorable towards the methods but reproachful of the normative consideration, or vice versa. Each section will be graded separately and follow a rubric with a combination of objective and subjective requirements. 
+
+
+Each of the midterm and final should be written in R-Markdown and knitted into a pdf.  The final and midterm pdf's and source code should be uploaded as part of a public github repository with an informative `ReadMe` file.  
+
+Besides the rubric items for each of the individual sections, you will be graded based off the following aspects:
+
+- Professionalism: There should be no R code anywhere in your final document. You will find that the `echo = FALSE` header will be useful in producing output while suppressing the corresponding code.  All figures and tables should use the same colors for consistency. You should format variable names by **bolding** or *italicizing*. If the data was used in other articles or ideas from other authors were used, there should be references or acknowledgments. Writing should be at a high level. You should proofread and edit in multiple drafts.
+
+- Difficulty, Creativity, Ambition: Was the chosen paper, as well as the subsequent analysis (both mathematical and philosophical) sufficiently detailed and novel?  
+
+- Format: Does your final paper proceed with sections as outlined above? 
+
+- Spelling and Grammar: Every spelling or grammatical error will result in you losing points. This paper should be proofread for errors.
+
+# **Midterm Rubric**
+
+|Requirement|Points|
+|-------|------:|
+|Meeting: One-on-one attended (prepared) |2 Points|
+|Papers: No fewer than 3 papers included in one-on-one |2 Points|
+|Introduction: Am I interested?|3 Points|
+|Summary of Method: Adequately Depicts Method|5 Points|
+|Summary of Method: Accurately Reports Results| 5 Points|
+|Description of Normative Consideration: Am I convinced this matters? | 5 Points|
+|Overall: Professionalism (No R Code, Formatting, Well-Written) |4 Points|
+|Overall: Difficulty, Creativity, and Ambition|4 Points|
+|Overall: Spelling and Grammatical Errors|3 Points|
+|Submission: Part of a proper github repository? |2 Points|
+|**Total**|**35 Points**|
+|||
+
+
+# **Final Rubric**
+|Requirement|Points|
+|-------|------:|
+|Introduction: Am I interested?|3 Points|
+|Analysis of Methods: Application or verification of results| 8 Points|
+|Analysis of Normative Consideration: Successfully appeals to philosophical principle| 10 Points|
+|Conclusion: Concise Synopsis of Impact of Cited Paper |4 Points|
+|Conclusion: Blatant restatement of introduction? |2 Points|
+|Figures and Formula: Do you display figures and formulas in an appealing yet strategic fashion?| 5 Points|
+|Overall: Professionalism (No R Code displayed, Formatting, Well-Written, no Screen-Shots from Paper) |5 Points|
+|Overall: Difficulty, Creativity, and Ambition|4 Points|
+|Overall: Spelling and Grammatical Errors|3 Points|
+|Overall: Am I convinced of your position (both statistically and philosophically)?|4 Points|
+|Submission: Part of a proper github repository? |2 Points|
+|**Total**|**50 Points**|
+|||
